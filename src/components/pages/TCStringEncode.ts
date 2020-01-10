@@ -6,7 +6,8 @@ import FormSelect from '../forms/FormSelect.vue';
 import BigFormSelect from '../forms/BigFormSelect.vue';
 
 import {Component, Vue} from 'vue-property-decorator';
-import {TCModel, GVL, TCString, Vendor, Purpose, Feature, Json} from '@iabtcf/core';
+import {TCModel, GVL, TCString, Vendor, Purpose, Feature} from '@iabtcf/core';
+import Json from '@iabtcf/core';
 import FormField from '../forms/FormField';
 import Countries from '../../model/Countries';
 

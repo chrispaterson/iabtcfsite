@@ -1,28 +1,20 @@
 <template>
   <b-form-input
     class="tcstring-input"
-    v-model="tcstring"
+    v-model="consentString"
     @click="selectContents"
-    plaintext
+    @input="$emit('decode', consentString)"
   />
 </template>
 
 <script lang="ts">
 
 import {TCString} from '@iabtcf/core';
-import {Component} from 'vue-property-decorator';
+import {Component, Prop} from 'vue-property-decorator';
 import {FormComponent} from './FormComponent';
 
 @Component
 export default class extends FormComponent {
-
-  private tcstring_: string;
-
-  private get tcstring(): string {
-
-    return TCString.encode(this.tcModel);
-
-  }
 
   private selectContents(e: MouseEvent): void {
 
@@ -31,6 +23,12 @@ export default class extends FormComponent {
       (e.target as HTMLInputElement).select();
 
     }
+
+  }
+  
+  private decodeNewString(): void {
+
+    this.$emit("decode");
 
   }
 

@@ -6,7 +6,7 @@
   <template v-if="isReady">
     <form>
       <b-row>
-        <b-col cols="12">
+        <b-col cols="8">
           <b-card
             bg-variant="light"
             class="b-card">
