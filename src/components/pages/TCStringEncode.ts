@@ -29,7 +29,6 @@ export default class extends Vue {
   private vendors_: FormField[] = [];
   private purposes_: FormField[] = [];
   private specialFeatures_: FormField[] = [];
-  private encodedTCString: string = '';
   private formFields: FormField[] = [
     {value: 'cmpId', text: 'CMP ID'},
     {value: 'cmpVersion', text: 'CMP Version'},
@@ -119,14 +118,17 @@ export default class extends Vue {
   }
   private get languages(): FormField[] {
 
-    return Array.from(this.tcModel.consentLanguages).map((lang: string): FormField => {
+    const retr:FormField[] = [];
 
-      return {
+    TCModel.consentLanguages.forEach((lang: string): void => {
+
+      retr.push({
         text: lang,
         value: lang,
-      };
+      });
 
     });
+    return retr;
 
   }
 

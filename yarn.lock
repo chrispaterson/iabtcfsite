@@ -706,10 +706,10 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@iabtcf/core@^1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "http://vault.cnvrmedia.net/nexus/content/groups/npm-all/@iabtcf/core/-/core-1.0.0-beta.0.tgz#35c3d724d8f8836b83a334590eac995fb6637c62"
-  integrity sha512-YTYwwi7/45JF8M6g9B/hk8TkGlh1MJhnPySXwToB8p3t3lwrsvilbVrEIQ1TTsbSkNoL6BtOJbCs7nR+iMU9Ig==
+"@iabtcf/core@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@iabtcf/core/-/core-1.0.0-beta.3.tgz#b401cc53626a6263af3f2dc129ec06e76fd1cbec"
+  integrity sha512-AZDrVyyBqG5cl30x0xc41oTWansmqrmLfoY++7+01plT5u++PPmbmJM1RdyWGwnmsDHLezo8seVwkzUQo25eGw==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

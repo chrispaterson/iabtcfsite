@@ -9,6 +9,7 @@
             bg-variant="light"
             class="b-card">
             <decode-input
+              v-model="encodedTCString"
               @decode="decode"
             />
           </b-card>
