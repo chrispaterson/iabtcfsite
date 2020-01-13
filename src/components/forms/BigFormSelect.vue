@@ -5,13 +5,13 @@
       :label="label"
     >
       <b-form-select
-        id="id"
-        v-model="selected"
+        :id="id"
         :options="options"
-        multiple
         :select-size="size"
         @input="changeValue"
         class="mt-3"
+        multiple
+        v-model="selected"
       />
 
     </b-form-group>
