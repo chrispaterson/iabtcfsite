@@ -1,11 +1,15 @@
 <template>
-  <b-form-input
-    class="tcstring-input"
-    v-model="encodedTCString"
-    @click="selectContents"
-    @input="$emit('decode', tcstring)"
-    @update="update"
-  />
+  <b-form-group
+    description="Please enter an encoded TC string"
+    >
+    <b-form-input
+      class="tcstring-input"
+      v-model="encodedTCString"
+      @click="selectContents"
+      @input="$emit('decode', encodedTCString)"
+      @update="update"
+    />
+  </b-form-group>
 </template>
 
 <script lang="ts">

@@ -6,8 +6,8 @@
     >
       <b-form-select
         :id="id"
+        select-size="8"
         :options="options"
-        :select-size="size"
         @input="changeValue"
         class="mt-3"
         multiple
@@ -24,22 +24,12 @@ import {FormComponent} from './FormComponent';
 import FormField from './FormField';
 
 @Component
-
 export default class extends FormComponent {
-
-  private readonly MAX_SIZE: number = 10;
 
   @Prop()
   public options: FormField[];
 
   private selected: string[] = [];
-  private size: number = 0;
-
-  private mounted(): void {
-
-    this.size = Math.min(this.options.length, 10);
-
-  }
 
 }
 </script>

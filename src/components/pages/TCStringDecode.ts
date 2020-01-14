@@ -16,39 +16,26 @@ GVL.baseUrl = document.location.origin;
 })
 export default class extends Vue {
 
-  private tcModel: TCModel;
-  private eTCString: string;
+  private tcModel: TCModel = new TCModel();
+  private tcString: string;
 
-  public constructor() {
-
-    super();
-
-    if(~document.location.hash.indexOf('tcstring=')) {
-
-      this.decode(document.location.hash.split('tcstring=')[1]);
-
-    } else {
-      this.tcModel = new TCModel();
-    }
-
-  }
-
-  private decode(tcstring: string) : void {
-    let decodedString: object;
-    try {
-
-      this.eTCString = tcstring;
-      this.tcModel = TCString.decode(tcstring);
-      console.log('got the tcstring', this.tcModel);
-
-
-    } catch(error) {
-
-      console.error("didn't work");
-    }
-  }
   private created(): void {
-    this.tcModel.gvl = new GVL();
+    if(document.location.hash.split('#')[2] !== undefined) {
+
+      this.decode(document.location.hash.split('#')[2]);
+
+    }  
+  }
+
+  private decode(tcString: string) : void {
+
+    if(tcString) {
+
+      this.tcString = tcString;
+      this.tcModel = TCString.decode(tcString);
+
+    }
+
   }
 
 

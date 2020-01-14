@@ -104,7 +104,17 @@ export default class extends FormComponent {
 
   private get tcstringDecoded(): string {
 
-    return this.print('TCModel',this.tcModel);
+    let retr = '';
+
+    if(this.tcModel.cmpId) {
+
+      retr = this.print('TCModel', this.tcModel);
+
+    } else {
+
+      retr = 'Invalid TC String';
+    }
+    return retr;
 
   }
 

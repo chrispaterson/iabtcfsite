@@ -6,24 +6,26 @@
       <b-row>
         <b-col cols="8">
           <b-card
-            bg-variant="light"
+           header="TC String"
             class="b-card">
             <decode-input
-              v-bind:encodedTCString="eTCString"
+              :encodedTCString="tcString"
               @decode="decode"
             />
           </b-card>
         </b-col>
       </b-row>
 
-      <b-row>
+      <b-row
+         v-if='tcModel.cmpId'
+        >
         <b-col cols="8">
           <b-card
+               header="Decoded TC String"
             bg-variant="light"
             class="b-card">
             <decode-output
               :tcModel="tcModel"
-              @update="update"
             />
           </b-card>
         </b-col>

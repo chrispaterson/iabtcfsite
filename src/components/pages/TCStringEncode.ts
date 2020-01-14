@@ -32,20 +32,21 @@ export default class extends Vue {
   private formFields: FormField[] = [
     {value: 'cmpId', text: 'CMP ID'},
     {value: 'cmpVersion', text: 'CMP Version'},
-    {value: 'policyVersion', text: 'TCF Policy Version'},
     {value: 'consentScreen', text: 'Consent Screen'},
   ];
+
   private boolFields: FormField[] = [
     {value: 'isServiceSpecific', text: 'Is Service Specific'},
     {value: 'purposeOneTreatment', text: 'Special Purpose One Treatment'},
-    {value: 'supportOOB', text: 'Supports OOB'},
     {value: 'useNonStandardStacks', text: 'Publisher Uses Non-Standard Stacks'},
   ];
+
   private isReady: boolean = false;
 
   private created(): void {
     this.tcModel.gvl = new GVL();
     this.listenForGVLChanges();
+    this.tcModel.cmpId = Math.trunc(Math.random()*1000);
   }
 
   private listenForGVLChanges(): void {
@@ -62,7 +63,7 @@ export default class extends Vue {
           const vendor: Vendor = vendors[id];
 
           this.vendors_.push({
-            text: vendor.name,
+            text: `[${id}] ${vendor.name}`,
             value: id,
           });
 
@@ -78,7 +79,7 @@ export default class extends Vue {
 
           const purpose: Purpose = purposes[id];
           this.purposes_.push({
-            text: purpose.name,
+            text: `[${id}] ${purpose.name}`,
             value: id,
           });
 
@@ -94,7 +95,7 @@ export default class extends Vue {
 
           const specialFeature: Feature = specialFeatures[id];
           this.specialFeatures_.push({
-            text: specialFeature.name,
+            text: `[${id}] ${specialFeature.name}`,
             value: id,
           });
 
