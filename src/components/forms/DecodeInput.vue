@@ -1,9 +1,10 @@
 <template>
   <b-form-input
     class="tcstring-input"
-    v-model="tcstring"
+    v-model="encodedTCString"
     @click="selectContents"
     @input="$emit('decode', tcstring)"
+    @update="update"
   />
 </template>
 
@@ -16,17 +17,8 @@ import {FormComponent} from './FormComponent';
 @Component
 export default class extends FormComponent {
 
-  private tcstring:string = '';
-
   @Prop()
   private encodedTCString: string
-
-  private mount() {
-
-    this.tcstring = this.encodedTCString;
-
-  }
-
 
   private selectContents(e: MouseEvent): void {
 

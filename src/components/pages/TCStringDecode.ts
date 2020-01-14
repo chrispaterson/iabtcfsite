@@ -17,7 +17,7 @@ GVL.baseUrl = document.location.origin;
 export default class extends Vue {
 
   private tcModel: TCModel;
-  private encodedTCString: string = '';
+  private eTCString: string;
 
   public constructor() {
 
@@ -37,6 +37,7 @@ export default class extends Vue {
     let decodedString: object;
     try {
 
+      this.eTCString = tcstring;
       this.tcModel = TCString.decode(tcstring);
       console.log('got the tcstring', this.tcModel);
 
@@ -49,5 +50,6 @@ export default class extends Vue {
   private created(): void {
     this.tcModel.gvl = new GVL();
   }
+
 
 }

@@ -9,7 +9,7 @@
             bg-variant="light"
             class="b-card">
             <decode-input
-              v-model="encodedTCString"
+              v-bind:encodedTCString="eTCString"
               @decode="decode"
             />
           </b-card>
